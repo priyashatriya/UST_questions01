@@ -1,0 +1,30 @@
+import re
+input_password = 'asqwr1234@1,aF145#,2w3E*,2We3345'
+data=input_password.split(',')
+def password_validation(pswd):
+    while True:
+        if len(pswd)<6 and len(pswd)>12:
+            flg = -1
+            break
+        elif not re.search("[a-z]", pswd):
+            flg = -1
+            break
+        elif not re.search("[A-Z]", pswd):
+            flg = -1
+            break
+        elif not re.search("[0-9]", pswd):
+            flg = -1
+            break
+        elif not re.search("[$#@]", pswd):
+            flg = -1  
+            break
+        else:
+            flg = 0
+            break
+        return flag
+    for i in data:
+        res=password_validator(i)
+        if res==1:
+            continue
+        else:
+            print(i)
